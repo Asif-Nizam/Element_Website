@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# /index.html -> root
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html[\ ?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# /index -> root (in case anything still links to bare "index")
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index[\ ?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# Any other /page.html -> /page (redirects old links/bookmarks to the clean URL)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.\s]+)\.html[\ ?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Internally serve the matching .html file for a clean-URL request,
+# without changing what's shown in the address bar.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
+
+# Custom 404 page
+ErrorDocument 404 /404.html

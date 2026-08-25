@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://elementkochi.com/index.html</loc>
+    <loc>https://elementkochi.com/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://elementkochi.com/about.html</loc>
+    <loc>https://elementkochi.com/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elementkochi.com/programs.html</loc>
+    <loc>https://elementkochi.com/programs</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elementkochi.com/team.html</loc>
+    <loc>https://elementkochi.com/team</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elementkochi.com/gallery.html</loc>
+    <loc>https://elementkochi.com/gallery</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elementkochi.com/contact.html</loc>
+    <loc>https://elementkochi.com/contact</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
