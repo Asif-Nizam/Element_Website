@@ -267,10 +267,10 @@ h1, h2, h3, h4 {
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: .2em;
 }
 .wordmark__flip { display: inline-block; transform: scaleX(-1); }
-.wordmark__flip--v { display: inline-block; transform: scaleY(-1); }
+.wordmark__flip--v { display: inline-block; transform: none; }
 .loader__text.wordmark { color: var(--color-brand-gold); }
 
 @keyframes loader-logo-pop {
@@ -388,8 +388,12 @@ body.dark-header .site-header { color: var(--base-fg); }
   position: absolute;
   top: clamp(1rem, 2vw, 1.5rem);
   left: 50%;
+  right: auto;
   transform: translateX(-50%);
   z-index: 50;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  justify-content: flex-start;
   display: flex;
   align-items: center;
   gap: .5rem;
@@ -406,6 +410,26 @@ body.dark-header .site-header { color: var(--base-fg); }
 .hero-navbar__brand img { height: 1.35rem; width: auto; display: block; }
 .hero-navbar .menu-toggle { width: 2.5rem; height: 2.5rem; background: var(--color-brand-tan); border-radius: 50%; }
 .hero-navbar .menu-toggle span { background: var(--color-brand-black); }
+.hero-navbar__controls { display: flex; align-items: center; gap: .6rem; pointer-events: auto; }
+.audio-toggle {
+  pointer-events: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-brand-tan);
+  color: var(--color-brand-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.audio-toggle:hover { background: var(--color-brand-tan-dark); }
+.audio-toggle svg { width: 1.15rem; height: 1.15rem; }
+.audio-toggle__icon-off { display: none; }
+.audio-toggle.is-muted .audio-toggle__icon-on { display: none; }
+.audio-toggle.is-muted .audio-toggle__icon-off { display: block; }
 
 /* ---------- Hero bottom content (heading, subtitle, CTA bar) ---------- */
 .hero__content {
@@ -989,20 +1013,6 @@ body.dark-header .site-header { color: var(--base-fg); }
   transition: opacity .4s ease, background-color .4s ease, visibility .4s ease;
 }
 .menu-overlay.is-open { opacity: 1; visibility: visible; }
-.menu-overlay__brand {
-  position: absolute;
-  top: clamp(1rem, .8rem + .8vw, 2.125rem);
-  left: clamp(1.25rem, 1rem + 1vw, 2.4rem);
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
-  font-weight: 700;
-  letter-spacing: -.02em;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5), 0 1px 10px rgba(0,0,0,.3);
-}
-.menu-overlay__brand img { height: 1.5em; width: auto; display: block; filter: drop-shadow(0 1px 3px rgba(0,0,0,.5)); }
 .menu-overlay__list { display: flex; flex-direction: column; align-items: center; gap: clamp(.5rem, 1.5vw, 1rem); }
 @media (min-width: 768px) { .menu-overlay__list { align-items: flex-start; } }
 .menu-overlay__item {
@@ -1435,17 +1445,25 @@ body.dark-header .site-header { color: var(--base-fg); }
 .program-feature__poster img { width: 100%; height: 100%; object-fit: contain; }
 
 /* ---------- Team directory (no photos, editorial masthead style) ---------- */
-.team-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: var(--block-gap); }
+.team-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; margin-bottom: var(--block-gap); }
 .team-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border: 2px solid currentColor;
   border-radius: 9999px;
-  padding: .5rem 1.15rem;
+  padding: .6rem 1.15rem;
   font-weight: 600;
   font-size: clamp(.85rem, .8rem + .2vw, .95rem);
-  opacity: .6;
+  opacity: .8;
   transition: opacity .25s ease, background-color .25s ease, color .25s ease;
 }
-.team-nav a:hover { opacity: 1; background: var(--base-fg); color: var(--base-bg); }
+.team-nav a:hover, .team-nav a:focus-visible { opacity: 1; background: var(--base-fg); color: var(--base-bg); }
+@media (min-width: 640px) {
+  .team-nav { grid-template-columns: repeat(4, auto); justify-content: start; gap: .6rem; }
+  .team-nav a { padding: .5rem 1.15rem; }
+}
 
 .roster-list { display: flex; flex-direction: column; border-top: 1px solid rgba(127,127,127,.2); }
 .roster-row {

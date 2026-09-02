@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
@@ -13,23 +13,24 @@
 <meta property="og:locale" content="en_IN" />
 <meta property="og:title" content="Contact Element Sound Studio — Recording Studio &amp; Element Culture, Kochi" />
 <meta property="og:description" content="Get in touch with Element Sound Studio and Element Culture in Elamakkara, Kochi — call, WhatsApp, or visit to book studio time or enrol in a training program." />
-<meta property="og:image" content="https://elementkochi.com/public/IMG-20260723-WA0014.webp" />
+<meta property="og:image" content="https://elementkochi.com/public/equipments/IMG-20260723-WA0014.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Contact — Element Sound Studio, Kochi" />
 <meta name="twitter:description" content="Get in touch with Element Sound Studio in Elamakkara, Kochi." />
-<meta name="twitter:image" content="https://elementkochi.com/public/IMG-20260723-WA0014.webp" />
+<meta name="twitter:image" content="https://elementkochi.com/public/equipments/IMG-20260723-WA0014.webp" />
 <meta name="geo.region" content="IN-KL" />
 <meta name="geo.placename" content="Kochi" />
 <meta name="theme-color" content="#1e1a17" />
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="public/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="public/icons/favicon-16.png">
-<link rel="apple-touch-icon" href="public/icons/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="public/icons/favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="16x16" href="public/icons/favicon-16.png?v=3">
+<link rel="apple-touch-icon" href="public/icons/apple-touch-icon.png?v=3">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=10"></noscript>
+<link rel="preload" href="style.min.css?v=15" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=15"></noscript>
+<link rel="stylesheet" href="chatbot.css?v=1">
 <!-- Structured data: add Facebook to sameAs once the Page URL is confirmed. -->
 <script type="application/ld+json">
 {
@@ -108,11 +109,11 @@
 </head>
 <body class="dark-header">
 
-<div class="loader" id="loader"><div class="loader__mark"><img class="loader__logo" src="public/icons/logo-icon-gold.png" width="56" height="50" alt=""><span class="loader__text wordmark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span></div></div>
+<div class="loader" id="loader"><div class="loader__mark"><img class="loader__logo" src="public/icons/logo-icon-white.png?v=3" width="56" height="61" alt=""><span class="loader__text wordmark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span></div></div>
 
 <header class="site-header" id="siteHeader">
   <a href="/" class="brand-logo" aria-label="Element Sound Studio home">
-    <img src="public/icons/logo-icon-gold.png" width="200" height="180" alt="">
+    <img src="public/icons/logo-icon-white.png?v=3" width="165" height="180" alt="">
     <span class="wordmark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span>
   </a>
   <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
@@ -283,12 +284,9 @@
 </main>
 
 <div class="menu-overlay" id="menuOverlay">
-  <a href="/" class="menu-overlay__brand" aria-label="Element Sound Studio home">
-    <img src="public/icons/logo-icon-gold.png" width="200" height="180" alt="">
-    <span class="wordmark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span>
-  </a>
   <nav class="menu-overlay__list">
     <a class="menu-overlay__item" href="/programs" data-color="#C9962E" data-hover="#F3EAD8">Programs</a>
+    <a class="menu-overlay__item" href="/" data-color="#C97B4A" data-hover="#F3EAD8">Home</a>
     <a class="menu-overlay__item" href="/about" data-color="#234C4C" data-hover="#B9C79A">About</a>
     <a class="menu-overlay__item" href="/team" data-color="#7A2E3A" data-hover="#E8C4B8">Team</a>
     <a class="menu-overlay__item" href="/gallery" data-color="#6E7B4F" data-hover="#F3EAD8">Gallery</a>
@@ -302,6 +300,7 @@
 </a>
 
 <script src="script.min.js?v=5"></script>
+<script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js" defer></script>
 <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
 <script src="fly-text.min.js?v=5" defer></script>
